@@ -66,6 +66,17 @@ colPerc(table1)
 
 The numerical results shows us that out of the males that were infected 2.63% of them had taken placebo and 1.28% of them had gotten the Covid19 vaccine. This tells us that the vaccine is effective.
 
+## Inferential Results 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+The inferential results show us that the people who took the placebo were twice as likely to catch Covid then those who took the vaccine. With the p-value being very low it tells us that there is a small chance of getting results like these, if there was no difference between the placebo and Covid19 vaccination. 
+
+
+
 # Females
 
 
