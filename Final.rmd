@@ -104,6 +104,15 @@ basicCC + geom_bar(stat="identity", position = "dodge")
 
 The bar chart shows the infected rate of females who took placebo and those who got the Covid19 vaccine. It also shows that out of those who had gotten infected with Covid19, about a little less than 60% of them had taken placebo and about 40% of them had taken the covid shot. Looking at those who did not catch Covid it is about equal between the groups of females who had taken placebo and those who had got the covid shot.
 
+## Nummerical Results 
+```{r}
+table2 <- xtabs(~infected + treatment, data=Females)
+rowPerc(table2)
+colPerc(table2)
+```
+
+The numerical results show us that out of the females that were infected 2.3% of them had taken placebo and 1.62% of them had gotten the Covid19 vaccine. This tells us that the vaccine is more effective than placebo.
+
 # LGBTQ
 
 
