@@ -55,7 +55,7 @@ basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-The bar chart shows the infected rate of Males who took the placebo and those who took the Covid19 vaccine. Looking at th bar chart it shows that out of all the males that got infected with Covid19 more than 70% had taken placebo and about 30% of them took the covid shot. It also shows us that out of the Males that were not infected it is about equal between the group of males who took placebo and who took the Covid19 shot.
+The bar chart shows the infected rate of Males who took the placebo and those who took the Covid19 vaccine. Looking at the bar chart it shows that out of all the males that got infected with Covid19 more than 70% had taken placebo and about 30% of them took the covid shot. It also shows us that out of the Males that were not infected it is about equal between the group of males who took placebo and who took the Covid19 shot.
 
 ## Nummerical Results
 ```{r}
@@ -78,7 +78,31 @@ The inferential results show us that the people who took the placebo were twice 
 
 
 # Females
+```{r}
+Females <-filter(FinalDat, sex == "F")
+```
 
+```{r}
+Females <- select(Females, -sex)
+```
+
+## Graphic Description
+```{r}
+dd2 <- Females %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+The bar chart shows the infected rate of females who took placebo and those who got the Covid19 vaccine. It also shows that out of those who had gotten infected with Covid19, about a little less than 60% of them had taken placebo and about 40% of them had taken the covid shot. Looking at those who did not catch Covid it is about equal between the groups of females who had taken placebo and those who had got the covid shot.
 
 # LGBTQ
 
