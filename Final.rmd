@@ -113,6 +113,17 @@ colPerc(table2)
 
 The numerical results show us that out of the females that were infected 2.3% of them had taken placebo and 1.62% of them had gotten the Covid19 vaccine. This tells us that the vaccine is more effective than placebo.
 
+
+## Inferential Results 
+```{r}
+chisq.test(table2)
+chisqtestGC(table2)
+fisher.test(table2)
+```
+
+The inferential results show about 1.43 odds ratio. This tells us that those that took placebo are about 1.43 times as likely to catch covid than those that took the vaccine. The results also gave a low p-value which indicates a low chance of getting these results if there was no difference between females who took the placebo or vaccine. 
+
+
 # LGBTQ
 
 
