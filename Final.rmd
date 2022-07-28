@@ -174,5 +174,15 @@ colPerc(table3)
 
 The numerical results show that out of the LGBTQ's that were infected 0.5% took placebo and 3% of them had taken the vaccine.
 
+## Inferential Results 
+```{r}
+chisq.test(table3)
+chisqtestGC(table3)
+fishtestL <- fisher.test(table3)
+fishtestL
+```
+
+The inferential results show a 0.1 odds ratio. This tells us that those who took placebo are about 0.1 times as likely to catch covid than those who took the vaccine.
+
 # Druggies
 
