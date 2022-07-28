@@ -70,12 +70,24 @@ The numerical results shows us that out of the males that were infected 2.63% of
 ```{r}
 chisq.test(table1)
 chisqtestGC(table1)
-fisher.test(table1)
+fishtestm <-fisher.test(table1)
+print(fishtestm)
 ```
 
 The inferential results show us that the people who took the placebo were twice as likely to catch Covid then those who took the vaccine. With the p-value being very low it tells us that there is a small chance of getting results like these, if there was no difference between the placebo and Covid19 vaccination. 
 
+## Efficacy
+```{r}
+options(digits = 1)
+maleffic=fishtestm$estimate/(1+fishtestm$estimate)*100
+malefficlo=fishtestm$conf.int[1]/(1+fishtestm$conf.int[1])*100
+maleffichi=fishtestm$conf.int[2]/(1+fishtestm$conf.int[2])*100
+print(maleffic)
+print(malefficlo)
+print(maleffichi)
+```
 
+The confidence interval for the effectiveness of the vaccine on males has low of `r malefficlo` and a high of `r maleffichi`.
 
 # Females
 ```{r}
@@ -124,8 +136,8 @@ fishtestf
 
 The inferential results show about 1.43 odds ratio. This tells us that those that took placebo are about 1.43 times as likely to catch covid than those that took the vaccine. The results also gave a low p-value which indicates a low chance of getting these results if there was no difference between females who took the placebo or vaccine. 
 
+## Efficacy
 ```{r}
-options(digits = 1)
 femeffic=fishtestf$estimate/(1+fishtestf$estimate)*100
 femefficlo=fishtestf$conf.int[1]/(1+fishtestf$conf.int[1])*100
 femeffichi=fishtestf$conf.int[2]/(1+fishtestf$conf.int[2])*100
