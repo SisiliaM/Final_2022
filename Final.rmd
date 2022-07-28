@@ -32,12 +32,9 @@ A new  preventative vaccine (covid91) is under test in clinical trials. Given th
 
 # Males
 ```{r}
-Males <- filter(FinalDat, sex == "M")
+Males <- filter(FinalData, sex == "M")
 ```
 
-```{r}
-Males <- select(Males, -sex)
-```
 
 ## Graphic description
 ```{r}
@@ -91,12 +88,9 @@ The confidence interval for the effectiveness of the vaccine on males has low of
 
 # Females
 ```{r}
-Females <-filter(FinalDat, sex == "F")
+Females <-filter(FinalData, sex == "F")
 ```
 
-```{r}
-Females <- select(Females, -sex)
-```
 
 ## Graphic Description
 ```{r}
@@ -149,8 +143,27 @@ print(femeffichi)
 The confidence interval  for the effectiveness of the vaccine for females has a low of `r femefficlo` and a high of `r femeffichi`.
 
 # LGBTQ
+```{r}
+LGBTQ <-filter(FinalData, LGBTQ == "gay")
+```
+
+## Graphic Description
+```{r}
+dd2 <- LGBTQ %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
 
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+The bar chart shows the infected rate of gays who took the placebo and those who took the covid19 vaccine. Looking at the chart it shows that out of those who had gotten infected with covid19 about 15% of them had taken placebo and a little less than 80% of them had taken the covid19 shot. Looking at those who did not catch covid about 50% of them had taken placebo and a little less than 50% of them had gotten the covid vaccine. 
 
 # Druggies
 
