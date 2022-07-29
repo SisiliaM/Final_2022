@@ -219,6 +219,14 @@ basicCC + geom_bar(stat="identity", position = "dodge")
 
 The bar chart shows the infected rate of Drug Users who took the placebo and those who took the Covid19 vaccine. Looking at the chart out of those that got infected about 15% of them had taken placebo and about 85% of them had gotten the covid vaccine. Which indicates that for drug users those that had taken the vaccine caught covid more than those who took placebo. Also Looking at those who did not catch Covid it is about equal between the groups of drug users who had taken placebo and those who had got the covid shot.
 
+## Nummerical Results 
+```{r}
+table4 <- xtabs(~infected + treatment, data=DrugUser)
+rowPerc(table4)
+colPerc(table4)
+```
+
+The numerical results show that out of the drug users that were infected 0.6% took placebo and 3% of them had taken the vaccine.
 
 
 
