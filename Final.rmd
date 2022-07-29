@@ -250,5 +250,10 @@ print(Deffichi)
 
 This shows that the vaccine is 15% effective. The confidence interval for the effectiveness of the vaccine has a low of `r Defficlo` and a high of `r Deffichi`.
 
+# Conclusion
+
+The covid19 vaccine was effective in protecting males from getting infected. The effectiveness of the vaccine for males was `r maleffic`, being the highest percentage out of all the four groups. The covid19 vaccine was also effective in protecting females from getting infected. The effectiveness of the vaccine for females was `r femeffic`. However the vaccine was not effective in protecting LGBTQ's from getting infected. The effectiveness of the vaccine for the LGBTQ was only `r Leffic`, which was the lowest percentage out of all the four groups. The vaccine was also not effective in protecting drug users from getting infected. The effectiveness of the vaccine for drug users was only `r Deffic`.
+
+The vaccine should be only recommended to males and females because it was shown to be effective towards those two groups. However the vaccine should not be recommended to drug users and to the LGBTQ community because it was shown not to be effective for these two groups.
 
 
