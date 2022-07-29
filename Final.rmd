@@ -228,6 +228,12 @@ colPerc(table4)
 
 The numerical results show that out of the drug users that were infected 0.6% took placebo and 3% of them had taken the vaccine.
 
+## Inferential Results 
+```{r}
+chisq.test(table4)
+chisqtestGC(table4)
+fishtestD <- fisher.test(table4)
+fishtestD
+```
 
-
-
+The inferential results show a 0.2 odds ratio. This tells us that those who took placebo are about 0.2 times as likely to catch covid than those who took the vaccine. Since the p-value is really low it tells us that there is a very little chance of seeing these results if there was no difference between the placebo and the vaccine for drug users.
