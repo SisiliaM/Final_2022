@@ -84,7 +84,7 @@ print(malefficlo)
 print(maleffichi)
 ```
 
-The confidence interval for the effectiveness of the vaccine on males has low of `r malefficlo` and a high of `r maleffichi`.
+This shows that the vaccine is 68% effective.The confidence interval for the effectiveness of the vaccine on males has low of `r malefficlo` and a high of `r maleffichi`.
 
 # Females
 ```{r}
@@ -140,7 +140,7 @@ print(femefficlo)
 print(femeffichi)
 ```
 
-The confidence interval  for the effectiveness of the vaccine for females has a low of `r femefficlo` and a high of `r femeffichi`.
+This shows that the vaccine is 59% effective.The confidence interval  for the effectiveness of the vaccine for females has a low of `r femefficlo` and a high of `r femeffichi`.
 
 # LGBTQ
 ```{r}
@@ -237,3 +237,18 @@ fishtestD
 ```
 
 The inferential results show a 0.2 odds ratio. This tells us that those who took placebo are about 0.2 times as likely to catch covid than those who took the vaccine. Since the p-value is really low it tells us that there is a very little chance of seeing these results if there was no difference between the placebo and the vaccine for drug users.
+
+## Efficacy
+```{r}
+Deffic=fishtestD$estimate/(1+fishtestD$estimate)*100
+Defficlo=fishtestD$conf.int[1]/(1+fishtestD$conf.int[1])*100
+Deffichi=fishtestD$conf.int[2]/(1+fishtestD$conf.int[2])*100
+print(Deffic)
+print(Defficlo)
+print(Deffichi)
+```
+
+This shows that the vaccine is 15% effective. The confidence interval for the effectiveness of the vaccine has a low of `r Defficlo` and a high of `r Deffichi`.
+
+
+
